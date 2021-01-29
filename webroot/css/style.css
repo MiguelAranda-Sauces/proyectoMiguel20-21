@@ -1,0 +1,64 @@
+/* 
+    Created on : 25-ene-2021, 20:27:32
+    Author     : Bluewalk
+*/
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body{
+    background: #CCC;
+}
+
+#nav{
+
+    background: #54afff;
+    font-weight: bold;
+    font-size: 2rem;
+    display: grid;
+
+}
+
+#nav >article{
+    height: 50px;
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+}
+
+
+#tituloVista{
+    display: flex;
+    justify-content: center;
+    margin-left: 15%;
+    position: relative;
+    align-items: center;
+}
+#bNav{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input{
+    background: none;
+    border: none;
+    height: 70%;
+    border-top: 3px solid #FFF;
+    border-bottom: 3px solid #FFF;
+    border-top-width: 30px;
+    /*padding-left: 30px;*/
+}
+
+.botonNav:hover{
+    
+    
+}
+
+.botonNav{
+    width: 150px;
+    margin-left: 30px;
+}
