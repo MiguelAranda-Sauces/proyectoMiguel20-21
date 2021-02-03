@@ -6,8 +6,14 @@
  * @version 1.0
  */
 
-if(isset($_REQUEST['cancelar'])){
+if(isset($_REQUEST['login'])){
     $_SESSION['controladorEnCurso'] = $controladores['login'];
+    header('Location: index.php'); // redirige al login
+    exit;
+}
+
+if(isset($_REQUEST['cancelar'])){
+    $_SESSION['controladorEnCurso'] = $controladores['index'];
     header('Location: index.php'); // redirige al login
     exit;
 }

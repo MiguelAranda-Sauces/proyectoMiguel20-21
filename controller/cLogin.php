@@ -17,6 +17,11 @@ $aError = [//declaramos y inicializamos el array de los errores de los campos de
     "Password" => null
 ];
 
+if (isset($_REQUEST['cancelar'])) { //si el boton de regristo es accionado entrara
+    $_SESSION['controladorEnCurso'] = $controladores['index']; // asignamos a la variable vistaEnCurso la vista del registro
+    header('Location: index.php'); //enviamos al de vuelta al index
+    exit;
+}
 if (isset($_REQUEST['registro'])) { //si el boton de regristo es accionado entrara
     $_SESSION['controladorEnCurso'] = $controladores['registro']; // asignamos a la variable vistaEnCurso la vista del registro
     header('Location: index.php'); //enviamos al de vuelta al index
