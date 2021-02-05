@@ -18,6 +18,6 @@ session_start(); //iniciamos la sesión
 if (isset($_SESSION['controladorEnCurso'])) {//si la sesión esta iniciada, cargamos el controlador pasado
     require_once $_SESSION['controladorEnCurso'];
 } else { //si no esta iniciada la sesión el controlador tendra el valor de login
-    require_once $controladores["login"];
+    require_once $controladores["index"];
 }
 ?>

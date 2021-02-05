@@ -8,7 +8,6 @@
  * @since 1.1 27/01/2021 implementacion de la funcion servicioIPGEO.
  * @version 1.1
  */
-
 class REST {
 
     /**

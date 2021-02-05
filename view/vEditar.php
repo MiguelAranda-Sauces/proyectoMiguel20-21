@@ -1,18 +1,18 @@
-<body>
-    <div id="cabecera">
-        <div id="titulo">
-            <h1>Editar Pefil</h1>
+<article id="nav">
+    <section id="conNav">
+        <div id='tituloVista'>
+            <p>
+                Aplicacion Miguel 20-21
+            </p>
         </div>
-        <div class="nav">
-
-            <form id="close" name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                 <button class="botonEnvio" type="submit" name='back' value="Volver" ><img class="icoBoton" src="webroot/media/img/volver-flecha-izquierda.png">Volver</button>
-                <!--<button class="botonEnvio" type="submit" name='closeSession' value="Cerrar Sesion" >Cerrar Sesion</button>-->
-            </form>
-        </div>
-    </div>
-    <div id="contenedor"> 
-        <div id="form">
+        <form id='bNav' name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+            <input class="botonNav" type="submit" value="Cambiar Password" name="pass"><!-- Si punsamos Registrarse mandaremos el valor de Registro a la variable controladorActual de sesion y volveremos a cargar el index -->
+            <input class="botonNav" type="submit" value="Cerrar Sesion" name="closeSession"><!-- Si punsamos Registrarse mandaremos el valor de Registro a la variable controladorActual de sesion y volveremos a cargar el index -->
+        </form>
+    </section>
+</article>
+<article id="contenedor"> 
+    <section id="edit">
             <form class="descript" action= "<?php echo $_SERVER["PHP_SELF"] ?>" method= "POST">
                 <div class="campos">
                     <label class="labelTitle" for="usuario">Usuario: </label>
@@ -39,12 +39,10 @@
                             value="<?php echo $numAccesos ?>"> 
                 </div>
 
-               <div class="botonSend">
+                <div class="botonSend">
                     <input class="botonEnvio" type= "submit" value="Editar Perfil" name= "edit">
                     <input class="botonEnvio" type= "submit" value="Cancelar" name= "back">
-                    <input class="botonEnvio" type= "submit" value="cambioPass" name= "Cambiar Password">
                 </div>
             </form>
-        </div>
-    </div>
-</body>
+    </section>
+</article>

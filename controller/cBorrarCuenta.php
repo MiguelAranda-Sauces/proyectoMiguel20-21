@@ -6,6 +6,12 @@
  * @version 1.0
  */
 
+if (isset($_REQUEST['closeSession'])) { // si se ha pulsado el boton de Cerrar Sesion
+    session_destroy(); // destruye todos los datos asociados a la sesion
+    header("Location: index.php"); // redirige al login
+    exit;
+}
+
 if (isset($_REQUEST['back'])) { // si se ha pulsado el boton de back
     $_SESSION['controladorEnCurso'] = $controladores['inicio']; // guarda en la session el controlador que deseamos usar
     header("Location: index.php"); // redirige al login

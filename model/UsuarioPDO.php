@@ -103,12 +103,12 @@ class UsuarioPDO {
         $consulta = "UPDATE T01_Usuario SET T01_DescUsuario= ? WHERE T01_CodUsuario=?";
         $resultado = DBPDO::ejecutaConsulta($consulta, [$desUsuario, $codUsuario]);
 
-        $consulta = "SELECT * FROM T01_Usuario where T01_CodUsuario=?"; //Creamos la consulta mysql
+        $consulta = "SELECT T01_DescUsuario FROM T01_Usuario where T01_CodUsuario=?"; //Creamos la consulta mysql
         $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
 
         $oUsuarioConsulta = $resultado->fetchObject(); // Almacenamos el objeto devualto por la consulta en la variable ousuarioConsulta
         //Instanciamos un objeto Usuario con los campos del resultado de la consulta
-        $oUsuario = new Usuario($oUsuarioConsulta->T01_CodUsuario, $oUsuarioConsulta->T01_Password, $oUsuarioConsulta->T01_DescUsuario, $oUsuarioConsulta->T01_NumConexiones, $oUsuarioConsulta->T01_FechaHoraUltimaConexion, $oUsuarioConsulta->T01_Perfil);
+        $oUsuario =  $oUsuarioConsulta->T01_DescUsuario;
 
         return $oUsuario;
     }
@@ -121,6 +121,16 @@ class UsuarioPDO {
     public static function borrarUsuario($codUsuario) {
         $consulta = "DELETE FROM T01_Usuario WHERE T01_CodUsuario=?";
         DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
+    }
+
+    public static function consultarUsuario($codUsuario) {
+        $oUsuarioAhora = null;
+        $consulta = "SELECT * FROM T01_Usuario where T01_CodUsuario=?"; //Creamos la consulta mysql
+        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
+        $oUsuarioConsulta = $resultado->fetchObject(); // Almacenamos el objeto devualto por la consulta en la variable oUsuarioConsulta
+        $oUsuarioAhora = new Usuario($oUsuarioConsulta->T01_CodUsuario, $oUsuarioConsulta->T01_Password, $oUsuarioConsulta->T01_DescUsuario, $oUsuarioConsulta->T01_NumConexiones, $oUsuarioConsulta->T01_FechaHoraUltimaConexion, $oUsuarioConsulta->T01_Perfil);
+
+        return $oUsuarioAhora;
     }
 
 }

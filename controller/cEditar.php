@@ -6,6 +6,12 @@
  * @since 1.0 22/01/2021 Creación de codigo y documentación
  * @version 1.0
  */
+if (isset($_REQUEST['closeSession'])) { // si se ha pulsado el boton de Cerrar Sesion
+    session_destroy(); // destruye todos los datos asociados a la sesion
+    header("Location: index.php"); // redirige al login
+    exit;
+}
+
 if (isset($_REQUEST['back'])) { // si se ha pulsado el boton de back
     $_SESSION['controladorEnCurso'] = $controladores['inicio']; // guarda en la session el controlador que deseamos usar
     header("Location: index.php"); // redirige al login
@@ -18,6 +24,16 @@ if (isset($_REQUEST['cambioPass'])) { // si se ha pulsado el boton de cambioPass
     exit;
 }
 
+
+//  creamos la variable $oUsuarioActual y le pasamos los valores del usuario logeado
+$oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
+$codUsuario = $oUsuarioActual->getCodUsuario(); // variable que tiene el código del usuario sacado de la base de datos
+
+$oUsuarioAhora = UsuarioPDO::consultarUsuario($codUsuario); //llamamos a la funcion consultarUsuario recogiendo los valores actuales
+
+$numAccesos = $oUsuarioAhora->getNumAccesos(); // variable que tiene el numero de conexiones sacado de la base de datos
+$descUsuario = $oUsuarioAhora->getDescUsuario(); // variable que tiene la descripcion del usuario sacado de la base de datos
+$ultimaConexion = $oUsuarioAhora->getFechaHoraUltimaConexion(); // variable que tiene la fecha y hora de la ultima conexion
 
 
 $entradaOK = true; //declaramos y inicializamos la variable entradaObligatorioK, esta variable decidira si es correcta la entrada de datos del formulario
@@ -48,17 +64,12 @@ if ($entradaOK) {// si el valor es true entra
     $aDatosUsuario['descripcion'] = $_REQUEST["descripcion"];
 
     $oUsuario = UsuarioPDO::modificarUsuario($aDatosUsuario['usuario'], $aDatosUsuario['descripcion']); //llamamos a la funcion alta usuario de la case UsuarioPDO y le pasaremos los valores de $usuario,$descripción y $password
-    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario; // guarda en la session el objeto usuario
+    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->setDescUsuario($oUsuario); // guarda en la session DescUsuario en el objeto usuario
     $_SESSION['controladorEnCurso'] = $controladores['inicio']; // guarda en la session el controlador que deseamos usar
     header('Location: index.php'); //enviamos al de vuelta al index
     exit;
 }
-//  creamos la variable $oUsuarioActual y le pasamos los valores del usuario logeado
-$oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
-$codUsuario = $oUsuarioActual->getCodUsuario(); // variable que tiene el código del usuario sacado de la base de datos
-$numAccesos = $oUsuarioActual->getNumAccesos(); // variable que tiene el numero de conexiones sacado de la base de datos
-$descUsuario = $oUsuarioActual->getDescUsuario(); // variable que tiene la descripcion del usuario sacado de la base de datos
-$ultimaConexion = $oUsuarioActual->getFechaHoraUltimaConexion(); // variable que tiene la fecha y hora de la ultima conexion
+
 
 $vistaEnCurso = $vistas['editar']; // asignamos a la variable vistaEnCurso la vista del login
 require_once $vistas['layout']; // cargamos el layout
