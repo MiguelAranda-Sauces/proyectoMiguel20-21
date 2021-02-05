@@ -17,6 +17,7 @@ a{
 
 body{
     background: #FFF; 
+
 }
 
 /*cabezera*/
@@ -41,7 +42,7 @@ body{
 #tituloVista{
     display: flex;
     justify-content: center;
-    left: 17%;
+    padding-left: 40%;
     position: relative;
     align-items: center;
 }
@@ -116,7 +117,7 @@ footer{
 /*carrusel*/
 
 .carrusel{
-    height: 100%;
+    height: 95%;
 }
 
 .slider {
@@ -263,9 +264,9 @@ footer{
     }
 }
 
-/* login , registro*/
+/* login , registro, editar, borrar*/
 
-#login, #registro{
+#login, #registro, #edit, #borrar{
     height: 100%;
     width: 100%;
     display: flex;
@@ -273,7 +274,7 @@ footer{
     align-items: center;
 
 }
-#login form, #registro form{
+#login form, #registro form, #edit form, #borrar form{
     height: 340px;
     width: 365px;
     display: flex;
@@ -287,7 +288,7 @@ footer{
 
 }
 
-#login form:before, #registro form:before{
+#login form:before, #registro form:before , #edit form:before, #borrar form:before{
     content: " ";
     position: absolute;
     padding: 187px;
@@ -298,32 +299,32 @@ footer{
 
 }
 
-#login div, #registro div{
+#login div, #registro div, #edit div{
     height: 55px;
     margin-top: 50px;
     position: relative;
 }
-#login div:nth-child(1), #registro div:nth-child(1){
+#login div:nth-child(1), #registro div:nth-child(1), #edit div:nth-child(1), #borrar div:nth-child(1){
     height: 55px;
     margin-top: 0;
     position: relative;
 }
 
-#login input, #registro input{
+#login input, #registro input, #edit input{
     margin-top: 10px;
     font-weight: bold;
 }
 
-#login div:nth-child(1) input, #login div:nth-child(2) input,#registro div:nth-child(1) input, #registro div:nth-child(2) input, #registro div:nth-child(3) input, #registro div:nth-child(4) input{
+#login div:nth-child(1) input, #login div:nth-child(2) input,#registro div:nth-child(1) input, #registro div:nth-child(2) input, #registro div:nth-child(3) input, #registro div:nth-child(4) input, #edit div:nth-child(1) input, #edit div:nth-child(2) input, #edit div:nth-child(3) input, #edit div:nth-child(4) input{
     width: 310px;
     text-indent: 15px;
 }
 
-#login div:nth-child(3) input, #registro div:nth-child(5) input{
+#login div:nth-child(3) input, #registro div:nth-child(5) input, #edit div:nth-child(5) input,#error div:nth-child(1) input,#borrar div:nth-child(2) input{
     width: 150px;
 }
 
-#login .error, #registro .error{
+#login .error, #registro .error, #edit .error{
     position: relative;
     top: 8px;
 }
@@ -332,23 +333,23 @@ footer{
     color: #F00;
 }
 
-/* Registro */
+/* Registro editar borrar */
 
-#registro .descript{
+#registro .descript, #edit .descript,#borrar .descript{
     height: 540px;
     width:  400px;
 
 }
 
-#registro div{
+#registro div, #edit div, #borrar div{
     margin-top: 60px;
     margin-left: 40px;
 }
-#registro div:nth-child(5){
+#registro div:nth-child(5), #edit div:nth-child(5),#borrar div:nth-child(2){
     margin-left: 0px;
 }
 
-#registro form:before{
+#registro form:before, #edit form:before{
     padding: 210px;
     padding-bottom: 350px;
 }
@@ -358,4 +359,266 @@ footer{
 .iNav{
     position: relative;
     left: -50px;
+}
+
+.inicio{
+    display: flex;
+    align-items: center;
+    height: 100%;
+    flex-flow: column;
+}
+
+.inicio #datos{
+    display: flex;
+    flex-flow: column;
+    position: relative;
+    top: 20%;
+    font-size: 2rem;
+    border: 1px solid #e1e4e8;
+    border-radius: 9px;
+    padding: 30px;
+    background: #fafbfc;
+
+}
+.inicio #datos:before{
+    content: " ";
+    position: absolute;
+    height: 111%;
+    width: 101.5%;
+    border: 3px solid #105A95;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #CCC;
+    top: -10px;
+    left: -10px;
+}
+
+
+/* Secciones programa */
+
+#applys{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+#secPr, #secPr2{
+    position: relative;
+    top: 50%;
+    display: flex;
+    width: 200px;
+    height: 200px;
+    background: rgba(62, 62, 62, 0.7);
+
+}
+
+#secPr p, #secPr2 p{
+    width: 55px;
+    height: 55px;
+    background: #54afff;
+}
+
+#secPr p:after, #secPr2 p:after{
+    content: " ";
+    width: 0px;
+    height: 0px;
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+    border-right-color: transparent;
+    border-right-style: solid;
+    border-right-width: 10px;
+    border-top: 10px solid #54afff;
+    top: 55px;
+    position: absolute;
+    left: 7.5%;
+}
+
+#secPr input , #secPr2 input{
+    height: 55px;
+    width: 147px;
+    border: 0px;
+    border-radius: 0px;
+    background: rgba(84, 175, 255, 0.6);
+    font-weight: bold;
+    font-size: 1.3rem;
+    font-family: sans-serif;
+}
+
+#secPr img, #secPr2 img{
+    width: 40px;
+    position: relative;
+    left: 5px;
+    top: 7px;
+}
+
+#secPr2{
+    margin-left: 60px;
+}
+
+#secPr2 input{
+    font-size: 1rem;
+}
+
+
+/* Editar */
+
+#edit div:nth-child(1) input,#edit div:nth-child(3) input,#edit div:nth-child(4) input{
+    color:#686d9f;
+}
+
+#edit div:nth-child(2) input{
+    font-size: 1.1rem;
+}
+
+/* Borrar */
+
+#borrar form{
+    width: 500px!important;
+    height: 200px!important;
+}
+
+#borrar form:before{
+    padding: 210px;
+    padding-bottom: 0px;
+    padding-left: 300px;
+    z-index: -1;
+}
+
+#borrar input{
+    height: 50px;
+    width: 190px!important;
+    font-size: 1.5rem;
+}
+
+/* REST */
+
+#api{
+    width: 100%;
+    height: 95%;
+    display: flex;
+    flex-flow: column;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    top: 3%;
+}
+
+#titulo-rest{
+    font-size: 1.6rem;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+}
+
+#apod, #geoloc{
+    width: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column;
+    border: 3px solid #2196F3;
+    border-radius: 20px;
+    height: 60%;
+    text-align: center;
+}
+
+#servicio-rest p:nth-of-type(1){
+    font-weight: bold;
+    margin:10px;
+}
+
+#apod:before{
+    content: " ";
+    position: absolute;
+    height: 61%;
+    width: 61%;
+    border: 5px solid #105A95;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #CCC;
+}
+
+#servicio-rest{
+    margin:10px;
+    display: grid;
+    grid-template-columns: 230px auto;
+    grid-template-rows: 1fr;
+}
+#servicio-rest img{
+    margin: 10px;
+    grid-column-start: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 235px;
+}
+#servicio-rest p:nth-of-type(2){
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+
+#apod input{
+    height: 30px;
+    width: 110px;
+    border-radius: 5px;
+}
+
+#apod form{
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#desNasa{
+    text-align: left;
+    margin: 10px;
+}
+
+#geoloc{
+    height: 30%;
+    margin: 20px;
+    margin-top: 40px;
+}
+
+#geoloc p:nth-of-type(1){
+    font-weight: bold;
+}
+
+#geoloc input{
+    height: 40px;
+    width: 100px;
+    border-radius: 5px;
+    margin: 5px;
+}
+#geoloc input:nth-child(1){
+    text-align: center;
+    height: 40px;
+    width: 150px;
+    background: #FFF;
+}
+
+#geoloc img{
+    width: 50px;
+}
+
+#geoloc #formRest p:nth-of-type(2){
+    margin: 10px;
+}
+
+.black{
+    font-weight: bold;
+}
+
+#api .botonEnvio{
+    height: 40px;
+    width: 100px;
+}
+
+#geoloc:before{
+    content: " ";
+    position: absolute;
+    height: 31%;
+    width: 61%;
+    border: 5px solid #105A95;
+    border-radius: 20px;
+    box-shadow: 10px 10px 10px #CCC;
 }

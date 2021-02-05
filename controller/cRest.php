@@ -5,24 +5,31 @@ if (isset($_REQUEST['volver'])) { // si se ha pulsado el boton de Cerrar Sesion
     header("Location: index.php"); // redirige al login
     exit;
 }
-
 // API APOD
 /**
  * @author susana
  * @since 1.0
  * @copyright 24-01-2021
  */
+if (isset($_REQUEST['closeSession'])) { // si se ha pulsado el boton de Cerrar Sesion
+    session_destroy(); // destruye todos los datos asociados a la sesion
+    header("Location: index.php"); // redirige al login
+    exit;
+}
+
 if (isset($_REQUEST['enviarAPOD'])) { //si se ha enviado una fecha
     //llamamos al servicio y le pasamos la fecha introducida por el usuario
     $aServicioAPOD = REST::sevicioAPOD($_REQUEST['fecha']);
 } else {
     //llamamos al servicio y le pasamos la fecha de hoy
-    $aServicioAPOD = REST::sevicioAPOD(date('Y-m-d'));
+    $aServicioAPOD = REST::sevicioAPOD(date('2021-02-04'));
 }
 
-$tituloEnCurso = $aServicioAPOD['title'];
-$imagenEnCurso = $aServicioAPOD['url'];
-$descripcionEnCurso = $aServicioAPOD['explanation'];
+if ($aServicioAPOD != null) {
+    $tituloEnCurso = $aServicioAPOD['title'];
+    $imagenEnCurso = $aServicioAPOD['url'];
+    $descripcionEnCurso = $aServicioAPOD['explanation'];
+}
 
 // API IPGEO
 
@@ -31,12 +38,10 @@ $descripcionEnCurso = $aServicioAPOD['explanation'];
  * @since 1.0 19/01/2021 Creación de codigo y documentación
  * @version 1.0
  */
-
 if (isset($_REQUEST['enviarIPGEOLOC'])) {//si se manda una dirección ip
     //llamaos al servicio y le pasamos la ip introducida
     $aServicioIPGEO = REST::servicioIPGEO('&ip=' . $_REQUEST['ip']);
 } else { //en caso que no mandar una dirección ip automaticamente nos devolvera nustra dirección ip
-    
     $aServicioIPGEO = REST::servicioIPGEO(null);
 }
 
