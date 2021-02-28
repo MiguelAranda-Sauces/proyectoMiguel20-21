@@ -20,7 +20,7 @@ if (isset($_REQUEST['back'])) { // si se ha pulsado el boton de back
 
 if (isset($_REQUEST["borrar"])) {
 
-    $oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
+    $oUsuarioActual = $_SESSION['usuarioDAW210AplicacionFinal'];
     $codUsuario = $oUsuarioActual->getCodUsuario(); // variable que tiene el código del usuario sacado de la base de datos
 
     

@@ -8,6 +8,7 @@
     margin: 0;
     box-sizing: border-box;
     font-family: sans-serif;
+    font-size: 1.5vw;
 }
 a{
     text-decoration: none;
@@ -29,11 +30,14 @@ body{
     font-weight: bold;
     font-size: 2rem;
     display: grid;
+    height: 9vh;
+    border-bottom: 1vh solid #54afff
+
 
 }
 
 #nav >section{
-    height: 60px;
+    height: 8vh;
     display: grid;
     grid-template-columns: 3fr 1fr;
 }
@@ -46,10 +50,12 @@ body{
     position: relative;
     align-items: center;
 }
+
 #bNav{
     display: flex;
     justify-content: center;
     align-items: center;
+    height: 8vh;
 }
 
 input{
@@ -72,14 +78,16 @@ input{
 .botonNav{
     width: 150px;
     margin-left: 30px;
+    font-size: 0.4rem!important;
+    height: 4vh;
 }
 
-#conNav{
+/*#conNav{
     border-bottom: 10px solid #54afff;
-}
+}*/
 
 #contenedor{
-    height: 85vh;
+    height: 80.6vh;
     width: 100%;
 }
 
@@ -90,7 +98,7 @@ footer{
     display: grid;
     grid-template-columns: 1fr 2fr;
     align-items: center;
-    height: 85px;
+    height: 10.4vh;
     background: #000;
     color: #FFF;
     font-size: 1.3rem;
@@ -105,7 +113,7 @@ footer{
 }
 
 #enlacesMix img{
-    width: 50px;
+    width: 6vh;
     margin-right: 30px; 
 }
 
@@ -117,7 +125,7 @@ footer{
 /*carrusel*/
 
 .carrusel{
-    height: 95%;
+    height: 100%;
 }
 
 .slider {
@@ -141,9 +149,9 @@ footer{
     justify-content: center;
 }
 .slider__nav {
-    width: 12px;
-    height: 12px;
-    margin: 2rem 12px;
+    width: 2vh;
+    height: 2vh;
+    margin: 1rem 12px;
     border-radius: 50%;
     z-index: 10;
     outline: 6px solid #ccc;
@@ -201,7 +209,10 @@ footer{
     flex-flow: row nowrap;
 }
 .slider__contents {
-    height: 100%;
+    /*height: 100%;*/
+    height: 80%;
+    top: 5%;
+    position:relative;
     padding: 2rem;
     text-align: center;
     display: -webkit-box;
@@ -226,9 +237,20 @@ footer{
     width: 70%;
     overflow: hidden;
 }
+
+.slider__contents a{
+    position: relative;
+    top: 5%;
+}
+.slider__contents img{
+    height: 58vh;
+}
+
 .slider__image {
     font-size: 2.7rem;
     color: #2196F3;
+
+
 }
 .slider__caption {
     font-weight: 500;
@@ -266,7 +288,7 @@ footer{
 
 /* login , registro, editar, borrar*/
 
-#login, #registro, #edit, #borrar{
+#login, #registro, #edit, #borrar,#delete{
     height: 100%;
     width: 100%;
     display: flex;
@@ -274,7 +296,7 @@ footer{
     align-items: center;
 
 }
-#login form, #registro form, #edit form, #borrar form{
+#login form, #registro form, #edit form, #borrar form,#departamentos,#delete form{
     height: 340px;
     width: 365px;
     display: flex;
@@ -288,7 +310,7 @@ footer{
 
 }
 
-#login form:before, #registro form:before , #edit form:before, #borrar form:before{
+#login form:before, #registro form:before , #edit form:before, #borrar form:before,#departamentos:before,#delete:before{
     content: " ";
     position: absolute;
     padding: 187px;
@@ -296,16 +318,16 @@ footer{
     border: 5px solid #105A95;
     border-radius: 20px;
     box-shadow: 10px 10px 10px #CCC;
-
+    z-index: -1;
 }
 
 #login div, #registro div, #edit div{
-    height: 55px;
-    margin-top: 50px;
+    height: 7vh;
+    margin-top: 6vh;
     position: relative;
 }
-#login div:nth-child(1), #registro div:nth-child(1), #edit div:nth-child(1), #borrar div:nth-child(1){
-    height: 55px;
+#login div:nth-child(1), #registro div:nth-child(1), #edit div:nth-child(1), #borrar div:nth-child(1),#delete div:nth-child(1){
+    height: 6vh;
     margin-top: 0;
     position: relative;
 }
@@ -316,42 +338,45 @@ footer{
 }
 
 #login div:nth-child(1) input, #login div:nth-child(2) input,#registro div:nth-child(1) input, #registro div:nth-child(2) input, #registro div:nth-child(3) input, #registro div:nth-child(4) input, #edit div:nth-child(1) input, #edit div:nth-child(2) input, #edit div:nth-child(3) input, #edit div:nth-child(4) input{
-    width: 310px;
-    text-indent: 15px;
+    width: 30vh;
+    text-indent: 0.4rem;
+    font-size: 0.5rem;
 }
 
-#login div:nth-child(3) input, #registro div:nth-child(5) input, #edit div:nth-child(5) input,#error div:nth-child(1) input,#borrar div:nth-child(2) input{
-    width: 150px;
+#login div:nth-child(3) input, #registro div:nth-child(5) input, #edit div:nth-child(5) input,#error div:nth-child(1) input,#borrar div:nth-child(2) input,#delete div:nth-child(2) input{
+    width: 18vh;
 }
 
-#login .error, #registro .error, #edit .error{
+/*#login .error, #registro .error, #edit .error{
     position: relative;
     top: 8px;
-}
+}*/
 
 .error{
     color: #F00;
+    font-size: 0.5rem;
+
 }
 
 /* Registro editar borrar */
 
-#registro .descript, #edit .descript,#borrar .descript{
-    height: 540px;
-    width:  400px;
-
+#registro .descript, #edit .descript,#borrar .descript, #delete .descript{
+    height: 64vh;
+    width: 43vh;
 }
 
-#registro div, #edit div, #borrar div{
-    margin-top: 60px;
-    margin-left: 40px;
+#registro div, #edit div, #borrar div, #delete div{
+    margin-top: 7vh;
+    margin-left: 5vh;
 }
-#registro div:nth-child(5), #edit div:nth-child(5),#borrar div:nth-child(2){
+#registro div:nth-child(5), #edit div:nth-child(5),#borrar div:nth-child(2), #delete div:nth-child(2){
     margin-left: 0px;
 }
 
 #registro form:before, #edit form:before{
-    padding: 210px;
-    padding-bottom: 350px;
+    padding: 23vh;
+    padding-bottom: 43vh;
+    z-index: -1;
 }
 
 /* Inicio */
@@ -380,16 +405,17 @@ footer{
     background: #fafbfc;
 
 }
-.inicio #datos:before{
+.inicio #datos:after{
     content: " ";
     position: absolute;
     height: 111%;
-    width: 101.5%;
+    width: 102.5%;
     border: 3px solid #105A95;
     border-radius: 20px;
     box-shadow: 10px 10px 10px #CCC;
     top: -10px;
     left: -10px;
+    z-index: -1;
 }
 
 
@@ -456,7 +482,7 @@ footer{
 }
 
 #secPr2 input{
-    font-size: 1rem;
+    font-size: 0.6rem;
 }
 
 
@@ -467,7 +493,7 @@ footer{
 }
 
 #edit div:nth-child(2) input{
-    font-size: 1.1rem;
+    font-size: 1.4vw;
 }
 
 /* Borrar */
@@ -477,7 +503,7 @@ footer{
     height: 200px!important;
 }
 
-#borrar form:before{
+#borrar form:before,#delete form:before{
     padding: 210px;
     padding-bottom: 0px;
     padding-left: 300px;
@@ -487,20 +513,24 @@ footer{
 #borrar input{
     height: 50px;
     width: 190px!important;
-    font-size: 1.5rem;
+    font-size: 0.8rem;
+}
+
+#borrar label,#delete label{
+    font-size: 1vw;
 }
 
 /* REST */
 
 #api{
     width: 100%;
-    height: 95%;
+    height: 90%;
     display: flex;
     flex-flow: column;
     justify-content: space-around;
     align-items: center;
     position: relative;
-    top: 3%;
+    top: 5%;
 }
 
 #titulo-rest{
@@ -511,7 +541,7 @@ footer{
 }
 
 #apod, #geoloc{
-    width: 60%;
+    width: 119vh;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -530,11 +560,12 @@ footer{
 #apod:before{
     content: " ";
     position: absolute;
-    height: 61%;
-    width: 61%;
+    height: 45vh;
+    width: 121vh;
     border: 5px solid #105A95;
     border-radius: 20px;
     box-shadow: 10px 10px 10px #CCC;
+    z-index: -1;
 }
 
 #servicio-rest{
@@ -549,6 +580,7 @@ footer{
     grid-row-start: 1;
     grid-row-end: 3;
     width: 235px;
+    max-height: 30vh;
 }
 #servicio-rest p:nth-of-type(2){
     grid-column-start: 1;
@@ -584,15 +616,13 @@ footer{
 }
 
 #geoloc input{
-    height: 40px;
-    width: 100px;
+    height: 4vh !important;
+    width: 15vh!important;
     border-radius: 5px;
     margin: 5px;
 }
 #geoloc input:nth-child(1){
     text-align: center;
-    height: 40px;
-    width: 150px;
     background: #FFF;
 }
 
@@ -616,9 +646,222 @@ footer{
 #geoloc:before{
     content: " ";
     position: absolute;
-    height: 31%;
-    width: 61%;
+    height: 24vh;
+    width: 121vh;
     border: 5px solid #105A95;
     border-radius: 20px;
     box-shadow: 10px 10px 10px #CCC;
+    z-index: -1;
+}
+
+#desNasa{
+    font-size: 0.5rem;
+}
+
+.formRest p{
+    font-size: 0.7rem;
+}
+
+#fecha,#impIp{
+    height: 5vh !important;
+    width: 24vh !important;
+}
+
+#enviar{
+    height: 5vh !important;
+}
+
+#geoloc #impIp{
+    height: 4vh!important;
+    width: 21vh!important;
+}
+
+#geoloc p,#geoloc span{
+    font-size:12px;
+}
+
+#api .botonEnvio{
+    height: 4vh!important;
+}
+
+/*Mantenimiento departamentos*/
+
+#mantenimientoDepar{
+    height: 100%;
+    width: 100%;
+}
+
+#departamentos{
+    height: 32vw;
+    width: 80vw;
+    position: relative;
+    left: 10%;
+    top: 4%;
+    justify-content: start;
+}
+
+#departamentos:before{
+    padding: 17vw;
+    padding-left: 66vw;
+    top: -3%;
+}
+
+#formBack{
+    position: relative;
+    top: 4vw;
+    width: 7vw;
+    left: 48vw;
+}
+
+#formBack input{
+    width: 7vw;
+    height: 6%;
+}
+
+#formMantenimiento input:nth-of-type(1){
+    margin-right: 10vh;
+    width: 60vh;
+    height: 4vh; 
+    font-size: 0.5rem;
+    top: -5px;
+    position: relative;
+    margin-top: 2vh;
+}
+
+#formMantenimiento input:nth-of-type(2),#formMantenimiento input:nth-of-type(3){
+    margin-right: 1vh;
+    width: 15vh; 
+}
+
+#formMantenimiento{
+    height: 4vw;
+    position: relative;
+}
+#table{
+    width: 94%;
+    height: 76%;
+    position: relative;
+    top: 2%;
+
+    left: 0%;
+    display: flex;
+
+}
+.formulario,.tablaResult,#table tbody{
+    width: 100%;
+    height: 100%;
+
+}
+
+.tablaResult,#table tbody{
+    display: flex;
+    align-items: center;
+    flex-flow: column;
+}
+
+#table tbody{
+    border: 3px solid #2196F3;
+    border-radius: 20px;
+    overflow: overlay;
+
+}
+
+#table tr{
+    display: flex;
+    top: 1vh;
+    position: relative;
+}
+#table th{
+    font-size: 0.7rem;
+    width: 29vh;
+    height: 3vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#table th:nth-of-type(2n){
+    background-color: #4eb5ff;
+}
+
+#table tr:nth-of-type(1){
+    border-bottom: 2px solid #000;
+}
+
+#totaRegistros{
+    position: relative;
+    left: 56vh;
+    top: 2vh;
+    display: inline;
+}
+
+tr{
+    width: 90%;
+}
+td{
+    font-size: 0.7rem;
+    width: 29vh;
+    height: 7vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-right: 1px solid #000;
+}
+
+td:last-of-type{
+    border:none ;
+}
+
+td:nth-of-type(2){
+    justify-content: start;
+}
+
+tr:nth-of-type(2n){
+    background-color: #54AFFF;
+}
+#botoness button{
+    background: none;
+    border: none;
+}
+#botoness img{
+    width: 48px;
+    height:48px;
+    border: none;
+    border-radius: 0px;
+    background: none;
+}
+
+#errorTd{
+    width: 100%;
+}
+/*add dep*/
+
+#addep{
+    margin-left: 1vh!important;
+}
+#addep input{
+    width: 17vh!important;
+}
+
+/* Borrar departamento*/
+#delete form{
+    height: 16vw;
+    width: 40vw;
+}
+#delete:before{
+    height: 0vw;
+    width: 22vw;
+}
+
+#delete div:nth-child(2) input{
+    width: 16vw;
+    height: 3vw;
+}
+/*otros*/
+
+.none{
+    top:1vw!important;
+    left: 0vw!important;
 }

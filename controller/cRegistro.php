@@ -68,7 +68,7 @@ if ($entradaOK) {// si el valor es true entra
     $aDatosUsuario['password'] = $_REQUEST['password'];
 
     $oUsuario = UsuarioPDO::altaUsuario( $aDatosUsuario['usuario'], $aDatosUsuario['descripcion'], $aDatosUsuario['password']); //llamamos a la funcion alta usuario de la case UsuarioPDO y le pasaremos los valores de $usuario,$descripción y $password
-    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario; // guarda en la session el objeto usuario
+    $_SESSION['usuarioDAW210AplicacionFinal'] = $oUsuario; // guarda en la session el objeto usuario
     $_SESSION['controladorEnCurso'] = $controladores['inicio']; // guarda en la session el controlador que deseamos usar
     header('Location: index.php'); //enviamos al de vuelta al index
     exit;

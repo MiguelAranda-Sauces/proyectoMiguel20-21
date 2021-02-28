@@ -102,13 +102,10 @@ class UsuarioPDO {
         $oUsuario = null;
         $consulta = "UPDATE T01_Usuario SET T01_DescUsuario= ? WHERE T01_CodUsuario=?";
         $resultado = DBPDO::ejecutaConsulta($consulta, [$desUsuario, $codUsuario]);
-
-        $consulta = "SELECT T01_DescUsuario FROM T01_Usuario where T01_CodUsuario=?"; //Creamos la consulta mysql
-        $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
-
-        $oUsuarioConsulta = $resultado->fetchObject(); // Almacenamos el objeto devualto por la consulta en la variable ousuarioConsulta
-        //Instanciamos un objeto Usuario con los campos del resultado de la consulta
-        $oUsuario =  $oUsuarioConsulta->T01_DescUsuario;
+        $consultaUsuario = "SELECT * FROM T01_Usuario where T01_CodUsuario=?"; //Creamos la consulta mysql
+        $resultadoUsuario = DBPDO::ejecutaConsulta($consultaUsuario, [$codUsuario]);
+        $oUsuarioConsulta = $resultadoUsuario->fetchObject(); // Almacenamos el objeto devualto por la consulta en la variable oUsuarioConsulta
+        $oUsuario = new Usuario($oUsuarioConsulta->T01_CodUsuario, $oUsuarioConsulta->T01_Password, $oUsuarioConsulta->T01_DescUsuario, $oUsuarioConsulta->T01_NumConexiones, $oUsuarioConsulta->T01_FechaHoraUltimaConexion, $oUsuarioConsulta->T01_Perfil);
 
         return $oUsuario;
     }
@@ -123,14 +120,23 @@ class UsuarioPDO {
         DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
     }
 
-    public static function consultarUsuario($codUsuario) {
-        $oUsuarioAhora = null;
-        $consulta = "SELECT * FROM T01_Usuario where T01_CodUsuario=?"; //Creamos la consulta mysql
+    /**
+     * Método obtenerUltimaConexion()
+     * 
+     * Obtienes la última conexión del usuario.
+     * 
+     * @param string $codUsuario Código del usuario
+     * @return null \ fecha Null o una fecha en formato timestamp.
+     */
+    public static function obtenerUltimaConexion($codUsuario) {
+        $fecha = null;
+        $consulta = "SELECT T01_FechaHoraUltimaConexion FROM T01_Usuario WHERE T01_CodUsuario=?";
         $resultado = DBPDO::ejecutaConsulta($consulta, [$codUsuario]);
-        $oUsuarioConsulta = $resultado->fetchObject(); // Almacenamos el objeto devualto por la consulta en la variable oUsuarioConsulta
-        $oUsuarioAhora = new Usuario($oUsuarioConsulta->T01_CodUsuario, $oUsuarioConsulta->T01_Password, $oUsuarioConsulta->T01_DescUsuario, $oUsuarioConsulta->T01_NumConexiones, $oUsuarioConsulta->T01_FechaHoraUltimaConexion, $oUsuarioConsulta->T01_Perfil);
-
-        return $oUsuarioAhora;
+        if ($resultado->rowCount() > 0) {
+            $oUsuarioConsulta = $resultado->fetchObject();
+            $fecha = $oUsuarioConsulta->T01_FechaHoraUltimaConexion;
+        }
+        return $fecha;
     }
 
 }

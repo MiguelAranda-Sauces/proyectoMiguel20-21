@@ -7,16 +7,16 @@ define("PASSWORD","Contraseña"); */
 
 //-------------------------------------Heracio--------------------------------------------------
 //conexion 1 and 1
-define("USER","dbo771560945"); //Usuario administrador de esa base de datos
-define("PASSWORD","Covid1234$"); //Contraseña del usuario
+/*define("USER","dbo771560945"); //Usuario administrador de esa base de datos
+define("PASSWORD","Covid1234$"); //Contraseña del usuario*/
 
 
 
 //-------------------------------------Desarrollo Casa--------------------------------------------------
 //no olvidar comentar el hostblind de mysql en su archivo de configuración
-/*define('DNS',"mysql:host=192.168.33.20;dbname=DAW210DBProyectoTema5");
+define('DNS',"mysql:host=192.168.33.20;dbname=DAW210DBProyectoTema5");
 define('USER',"usuarioDAW210DBProyectoTema5");
-define('PASSWORD',"paso");*/
+define('PASSWORD',"paso");
 
 //-------------------------------------Desarrollo clase--------------------------------------------------
 //no olvidar comentar el hostblind de mysql en su archivo de configuración

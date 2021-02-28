@@ -30,21 +30,14 @@
                 <p><img src="webroot/media/img/api.png"></p>
                 <form  name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <input class="sectionPr" type="submit" value="Rest" name="rest"><!-- Si punsamos Registrarse mandaremos el valor de Registro a la variable controladorActual de sesion y volveremos a cargar el index -->
-
                 </form>
-                <!--<a href="../../proyectoTema5.html"><button class="botonEnvio">Volver</button></a>
-                <a href="detalles.php"><button class="botonEnvio">Detalles Servidor</button></a>-->
 
             </div>  
             <div id="secPr2">
                 <p><img src="webroot/media/img/mantenimiento-web.png"></p>
                 <form  name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
-                    <input class="sectionPr" type="submit" value="M. Departamento" name="mantenimiento"><!-- Si punsamos Registrarse mandaremos el valor de Registro a la variable controladorActual de sesion y volveremos a cargar el index -->
-
+                    <input class="sectionPr" type="submit" value="M. Departamento" name="mantenimientoDep"><!-- Si punsamos Registrarse mandaremos el valor de Registro a la variable controladorActual de sesion y volveremos a cargar el index -->
                 </form>
-                <!--<a href="../../proyectoTema5.html"><button class="botonEnvio">Volver</button></a>
-                <a href="detalles.php"><button class="botonEnvio">Detalles Servidor</button></a>-->
-
             </div>  
         </section>
     </section>

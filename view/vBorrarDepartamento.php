@@ -11,13 +11,13 @@
     </section>
 </article>
 <article id="contenedor"> 
-    <section id="borrar">
-            <form class="descript borrar" action= "<?php echo $_SERVER["PHP_SELF"] ?>" method= "POST">
-                <label >¿Esta seguro de que quiere borrar su cuenta?</label>
-                <div class="botonSend">
-                    <input class="botonEnvio" type= "submit" value="Borrar Cuenta" name= "borrar">
-                    <input class="botonEnvio" type= "submit" value="Cancelar" name= "back">
-                </div>
-            </form>
+    <section id="delete">
+        <form name="borrarDep"action= "<?php echo $_SERVER["PHP_SELF"] ?>" method= "POST">
+            <label >¿Esta seguro de que quiere borrar el departamento con el codigo: <?php echo $_SESSION['codDepartamento'] ?>?</label>
+            <div class="botonSend">
+                <input class="botonEnvio" type= "submit" value="Borrar Departamento" name="borrar">
+                <input class="botonEnvio" type= "submit" value="Cancelar" name="cancelar">
+            </div>
+        </form>
     </section>
 </article>

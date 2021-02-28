@@ -26,14 +26,11 @@ if (isset($_REQUEST['cambioPass'])) { // si se ha pulsado el boton de cambioPass
 
 
 //  creamos la variable $oUsuarioActual y le pasamos los valores del usuario logeado
-$oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
+$oUsuarioActual = $_SESSION['usuarioDAW210AplicacionFinal'];
 $codUsuario = $oUsuarioActual->getCodUsuario(); // variable que tiene el código del usuario sacado de la base de datos
-
-$oUsuarioAhora = UsuarioPDO::consultarUsuario($codUsuario); //llamamos a la funcion consultarUsuario recogiendo los valores actuales
-
-$numAccesos = $oUsuarioAhora->getNumAccesos(); // variable que tiene el numero de conexiones sacado de la base de datos
-$descUsuario = $oUsuarioAhora->getDescUsuario(); // variable que tiene la descripcion del usuario sacado de la base de datos
-$ultimaConexion = $oUsuarioAhora->getFechaHoraUltimaConexion(); // variable que tiene la fecha y hora de la ultima conexion
+$numAccesos = $oUsuarioActual->getNumAccesos(); // variable que tiene el numero de conexiones sacado de la base de datos
+$descUsuario = $oUsuarioActual->getDescUsuario(); // variable que tiene la descripcion del usuario sacado de la base de datos
+$ultimaConexion = UsuarioPDO::obtenerUltimaConexion($codUsuario); // variable que tiene la fecha y hora de la ultima conexion
 
 
 $entradaOK = true; //declaramos y inicializamos la variable entradaObligatorioK, esta variable decidira si es correcta la entrada de datos del formulario
@@ -64,7 +61,7 @@ if ($entradaOK) {// si el valor es true entra
     $aDatosUsuario['descripcion'] = $_REQUEST["descripcion"];
 
     $oUsuario = UsuarioPDO::modificarUsuario($aDatosUsuario['usuario'], $aDatosUsuario['descripcion']); //llamamos a la funcion alta usuario de la case UsuarioPDO y le pasaremos los valores de $usuario,$descripción y $password
-    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO']->setDescUsuario($oUsuario); // guarda en la session DescUsuario en el objeto usuario
+    $_SESSION['usuarioDAW210AplicacionFinal']= $oUsuario; // guarda en la session DescUsuario en el objeto usuario
     $_SESSION['controladorEnCurso'] = $controladores['inicio']; // guarda en la session el controlador que deseamos usar
     header('Location: index.php'); //enviamos al de vuelta al index
     exit;

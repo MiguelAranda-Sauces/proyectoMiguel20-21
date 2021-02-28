@@ -55,7 +55,8 @@ if (isset($_REQUEST["login"])) { //si el boton de login es accionado entrara y h
 }
 
 if ($entradaOK) { // si la entrada esta bien recojo los valores introducidos y hago su tratamiento
-    $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'] = $oUsuario; // guarda en la session el objeto usuario
+    $_SESSION['usuarioDAW210AplicacionFinal'] = $oUsuario; // guarda en la session el objeto usuario
+    $_SESSION['fechaHoraUltimaConexion'] = $oUsuario->getFechaHoraUltimaConexion();
     $_SESSION['controladorEnCurso'] = $controladores['inicio']; // guarda en la session el controlador que deseamos usar
     header('Location: index.php'); //enviamos al de vuelta al index
     exit;

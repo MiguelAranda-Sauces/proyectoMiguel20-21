@@ -15,11 +15,11 @@
             <div id="enlacesMix">
                 <a href="https://github.com/MiguelAranda-Sauces" target="_blank" class="git" ><img class="git" src="webroot/media/img/git.png"></a>
                 <a href="documentacion/index.html" target="_blank" class="phpdoc" ><img class="git" src="webroot/media/img/phpdoc.png"></a>
+                <a href="../webroot/documentos/manualTema2CLM.docx" target="_blank" class="phpdoc" ><p>Tecnologias y Herramientas</p></a>
             </div>
             <div id="pie">
                 <a href="../../index.html" class="nombre">Miguel Ángel Aranda García 2020-2021</a>
             </div>
-
         </footer> 
     </body>
 </html>
