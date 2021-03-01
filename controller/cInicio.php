@@ -19,26 +19,26 @@ if (isset($_REQUEST['closeSession'])) { // si se ha pulsado el boton de Cerrar S
     exit;
 }
 
-if (isset($_REQUEST['editar'])) { // si se ha pulsado el boton de Cerrar Sesion
-    $_SESSION['controladorEnCurso'] = $controladores['editar'];
+if (isset($_REQUEST['editar'])) { // si se ha pulsado el boton de editar
+    $_SESSION['controladorEnCurso'] = $controladores['editar']; //cambia el valor de $_SESSION['controladorEnCurso']
     header("Location: index.php"); // redirige al login
     exit;
 }
 
-if (isset($_REQUEST['rest'])) { // si se ha pulsado el boton de Cerrar Sesion
-    $_SESSION['controladorEnCurso'] = $controladores['rest'];
+if (isset($_REQUEST['rest'])) { // si se ha pulsado el boton de rest
+    $_SESSION['controladorEnCurso'] = $controladores['rest']; //cambia el valor de $_SESSION['controladorEnCurso']
     header("Location: index.php"); // redirige al login
     exit;
 }
 
-if (isset($_REQUEST['mantenimientoDep'])) { // si se ha pulsado el boton de Cerrar Sesion
-    $_SESSION['controladorEnCurso'] = $controladores['mantenimientoDep'];
+if (isset($_REQUEST['mantenimientoDep'])) { // si se ha pulsado el boton de mantenimiento Departamento
+    $_SESSION['controladorEnCurso'] = $controladores['mantenimientoDep']; //cambia el valor de $_SESSION['controladorEnCurso']
     header("Location: index.php"); // redirige al login
     exit;
 }
 
-if (isset($_REQUEST['borrarCuenta'])) { // si se ha pulsado el boton de Cerrar Sesion
-    $_SESSION['controladorEnCurso'] = $controladores['borrarCuenta'];
+if (isset($_REQUEST['borrarCuenta'])) { // si se ha pulsado el boton de borrar Cuenta
+    $_SESSION['controladorEnCurso'] = $controladores['borrarCuenta']; //cambia el valor de $_SESSION['controladorEnCurso']
     header("Location: index.php"); // redirige al login
     exit;
 }

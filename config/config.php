@@ -29,7 +29,10 @@ $controladores = [
     "borrarCuenta" => "controller/cBorrarCuenta.php",
     "mantenimientoDep" => "controller/cMantenimentoDep.php",
     "altaDepartamento" => "controller/cAltaDepartamento.php",
-    "borrarDepartamento" => "controller/cBorrarDepartamento.php"
+    "borrarDepartamento" => "controller/cBorrarDepartamento.php",
+    "bajaLogicaDepartamento" => "controller/cBajaLogicaDepartamento.php",
+    "editarDepartamento" => "controller/cEditarDepartamento.php",
+    "altaLogicaDepartamento" => "controller/cAltaLogicaDepartamento.php"
 ];
 
 //creamos el objeto vistas y le asignamos las rutas
@@ -44,7 +47,10 @@ $vistas = [
     "borrarCuenta" => "view/vBorrarCuenta.php",
     "mantenimientoDep" => "view/vMantenimentoDep.php",
     "altaDepartamento" => "view/vAltaDepartamento.php",
-    "borrarDepartamento" => "view/vBorrarDepartamento.php"
+    "borrarDepartamento" => "view/vBorrarDepartamento.php",
+    "bajaLogicaDepartamento" => "view/vBajaLogicaDepartamento.php",
+    "editarDepartamento" => "view/vEditarDepartamento.php",
+    "altaLogicaDepartamento" => "view/vAltaLogicaDepartamento.php"
     
 ];
 ?>

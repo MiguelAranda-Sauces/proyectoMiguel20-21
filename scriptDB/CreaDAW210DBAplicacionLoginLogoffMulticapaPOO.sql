@@ -4,7 +4,7 @@
  */
 
 -- Crear base de datos 
-   -- CREATE DATABASE if NOT EXISTS (Nombre base de datos);
+   --CREATE DATABASE if NOT EXISTS db771560945;
 
 -- Uso de la base de datos. 
    -- USE (Nombre base de datos);
@@ -28,7 +28,7 @@
 CREATE TABLE if NOT EXISTS db771560945.T02_Departamento (
     T02_CodDepartamento VARCHAR(3) PRIMARY KEY,
     T02_DescDepartamento VARCHAR(255) NOT NULL,
-    T02_FechaBajaDepartamento DATE NULL,
+    T02_FechaBajaDepartamento INT NULL,
     T02_FechaCreacionDepartamento INT NULL,
     T02_VolumenNegocio FLOAT NULL
 )ENGINE=INNODB;

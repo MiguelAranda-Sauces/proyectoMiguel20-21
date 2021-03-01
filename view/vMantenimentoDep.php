@@ -29,25 +29,30 @@
                             <tr>
                                 <th>Codigo departamento</th>
                                 <th>Nombre departamento</th>
+                                <th>Fecha creación departamento</th>
                                 <th>Fecha baja</th>
                                 <th>Volumen de negocio</th>
                                 <th>Acciones</th>
                             </tr>
                             <?php
-                           
                             if (count($aDepartamentos) > 0) {
                                 foreach ($aDepartamentos as $departamento => $oDepartamento) {
                                     ?>
                                     <tr>
                                         <td><?php echo $oDepartamento->codDepartamento; ?></td>
                                         <td><?php echo $oDepartamento->descDepartamento; ?></td>
-                                        <td><?php echo $oDepartamento->fechaBajaDepartamento; ?></td>
+                                        <td><?php echo date('d/m/Y', $oDepartamento->fechaCreacionDepartamento) ?></td>
+                                        <td><?php
+                                            if ($oDepartamento->fechaBajaDepartamento != null) {
+
+                                                echo date('d/m/Y',($oDepartamento->fechaBajaDepartamento));
+                                            }
+                                            ?></td>
                                         <td><?php echo $oDepartamento->volumenDeNegocio; ?></td>
                                         <td>
                                             <form id="botoness" name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                                                 <div class="botonSend">
                                                     <button  name="editar" type="submit" value="<?php echo $oDepartamento->codDepartamento; ?>"> <img src="webroot/media/img/editar.png"  alt="editarDep" ></button>
-                                                    <button name="ver" type="submit" value="<?php echo $oDepartamento->codDepartamento; ?>"> <img src="webroot/media/img/ojo.png"  alt="ver" ></button>
                                                     <button name="borrar" type="submit" value="<?php echo $oDepartamento->codDepartamento; ?>" > <img src="webroot/media/img/eliminar.png"  alt="editarDep" ></button>
                                                     <?php if ($oDepartamento->fechaBajaDepartamento == null) { ?>
                                                         <button name="baja" type="submit" value="<?php echo $oDepartamento->codDepartamento; ?>"> <img src="webroot/media/img/apagado.png"  alt="editarDep" ></button>

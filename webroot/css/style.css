@@ -774,7 +774,7 @@ footer{
 #table th{
     font-size: 0.7rem;
     width: 29vh;
-    height: 3vh;
+    height: 5vh;
     position: relative;
     display: flex;
     justify-content: center;
@@ -818,6 +818,7 @@ td:nth-of-type(2){
     justify-content: start;
 }
 
+
 tr:nth-of-type(2n){
     background-color: #54AFFF;
 }
@@ -826,8 +827,8 @@ tr:nth-of-type(2n){
     border: none;
 }
 #botoness img{
-    width: 48px;
-    height:48px;
+    width: 40px;
+    height: 40px;
     border: none;
     border-radius: 0px;
     background: none;

@@ -16,6 +16,7 @@ class Departamento {
     private $codDepartamento;
     private $descDepartamento;
     private $volumenDeNegocio;
+    private $fechaCreacionDepartamento;
     private $fechaBajaDepartamento;
 
     /**
@@ -24,13 +25,14 @@ class Departamento {
      * @param type $codDepartamento el código del departamento
      * @param type $descDepartamento la descripción del departamento
      * @param type $volumenDeNegocio el volumen de negocio del departamento
+     * @param type $fechaCreacionDepartamento la fecha de creación del departamento
      * @param type $fechaBajaDepartamento la fecha de baja logica del departamento
      */
-    
-    function __construct($codDepartamento, $descDepartamento, $volumenDeNegocio, $fechaBajaDepartamento) {
+    function __construct($codDepartamento, $descDepartamento, $volumenDeNegocio, $fechaCreacionDepartamento, $fechaBajaDepartamento) {
         $this->codDepartamento = $codDepartamento;
         $this->descDepartamento = $descDepartamento;
         $this->volumenDeNegocio = $volumenDeNegocio;
+        $this->fechaCreacionDepartamento = $fechaCreacionDepartamento;
         $this->fechaBajaDepartamento = $fechaBajaDepartamento;
     }
 

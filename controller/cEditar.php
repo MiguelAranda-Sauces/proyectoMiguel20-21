@@ -61,7 +61,7 @@ if ($entradaOK) {// si el valor es true entra
     $aDatosUsuario['descripcion'] = $_REQUEST["descripcion"];
 
     $oUsuario = UsuarioPDO::modificarUsuario($aDatosUsuario['usuario'], $aDatosUsuario['descripcion']); //llamamos a la funcion alta usuario de la case UsuarioPDO y le pasaremos los valores de $usuario,$descripción y $password
-    $_SESSION['usuarioDAW210AplicacionFinal']= $oUsuario; // guarda en la session DescUsuario en el objeto usuario
+    $_SESSION['usuarioDAW210AplicacionFinal'] = $oUsuario; // guarda en la session DescUsuario en el objeto usuario
     $_SESSION['controladorEnCurso'] = $controladores['inicio']; // guarda en la session el controlador que deseamos usar
     header('Location: index.php'); //enviamos al de vuelta al index
     exit;

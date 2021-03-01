@@ -20,11 +20,11 @@ USE db771560945;
 
 -- Añadimos los departamentos
 INSERT INTO T02_Departamento(T02_CodDepartamento, T02_DescDepartamento, T02_FechaCreacionDepartamento, T02_VolumenNegocio) VALUES
-    ('INF', 'Departamento de informatica',null,3),
-    ('VEN', 'Departamento de ventas',null,1),
-    ('CON', 'Departamento de contabilidad',null,2),
-    ('PET', 'Departamento de pertenencias',null,4),
-    ('CFI', 'Departamento de Ciencia Ficcion',null,20);
+    ('INF', 'Departamento de informatica',1614621552,3),
+    ('VEN', 'Departamento de ventas',1614621552,1),
+    ('CON', 'Departamento de contabilidad',1614621552,2),
+    ('PET', 'Departamento de pertenencias',1614621552,4),
+    ('CFI', 'Departamento de Ciencia Ficcion',1614621552,20);
 
 -- Añadimos los usuarios , todas las password estan codificacadas en SHA2 256
 INSERT INTO T01_Usuario(T01_CodUsuario, T01_DescUsuario, T01_Password) VALUES
