@@ -5,7 +5,6 @@
  * @since 1.0 25/01/2021 Creación de codigo y documentación
  * @version 1.0
  */
-
 if (isset($_REQUEST['closeSession'])) { // si se ha pulsado el boton de Cerrar Sesion
     session_destroy(); // destruye todos los datos asociados a la sesion
     header("Location: index.php"); // redirige al login
@@ -18,12 +17,11 @@ if (isset($_REQUEST['back'])) { // si se ha pulsado el boton de back
     exit;
 }
 
-if (isset($_REQUEST["borrar"])) {
-
-    $oUsuarioActual = $_SESSION['usuarioDAW2LoginLogoffMulticapaPOO'];
+if (isset($_REQUEST["borrar"])) {// si se ha pulsado el boton de borrar cuenta
+    $oUsuarioActual = $_SESSION['usuarioDAW210AplicacionFinal'];
     $codUsuario = $oUsuarioActual->getCodUsuario(); // variable que tiene el código del usuario sacado de la base de datos
 
-    
+
     $oUsuario = UsuarioPDO::borrarUsuario($codUsuario); //llamamos a la funcion alta usuario de la case UsuarioPDO y le pasaremos los valores de $usuario,$descripción y $password
     session_destroy(); // destruye todos los datos asociados a la sesion
     header('Location: index.php'); //enviamos al de vuelta al index

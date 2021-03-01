@@ -25,10 +25,10 @@
                         <p>Puedes seleccionar una fecha para ver su imagen</p>
                         <form action = "<?php echo $_SERVER['PHP_SELF']; ?>" method = "post">
                             <p>
-                                <input type = "date" name = "fecha" value = "<?php echo isset($_REQUEST['enviarAPOD']) ? $_REQUEST['fecha'] : date('Y-m-d') ?>">
+                                <input id="fecha" type = "date" name = "fecha" value = "<?php echo isset($_REQUEST['enviarAPOD']) ? $_REQUEST['fecha'] : date('Y-m-d') ?>">
                             </p>
                             <div class = "botones">
-                                <input type = "submit" value = "Enviar" name = "enviarAPOD">
+                                <input id='enviar' type = "submit" value = "Enviar" name = "enviarAPOD">
                             </div>
                         </form>
                     </div>
@@ -45,9 +45,9 @@
             <div class="formRest">
                 <p>IPGEOLOC: ipgeolocation</p>
                 <p>Puedes ver a quien pertenece una ip y de donde es o bien saber cual es tu ip</p>
-                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+                <form id="formRegistro" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
                     <div class="botones">
-                         <input type="text" name="ip" value="<?php echo isset($_REQUEST['enviarIPGEOLOC']) ? $_REQUEST['ip'] : $ipGeoIp ?>">
+                         <input type="text" id='impIp' name="ip" value="<?php echo isset($_REQUEST['enviarIPGEOLOC']) ? $_REQUEST['ip'] : $ipGeoIp ?>">
                         <input type="submit" value="Buscar Ip" name="enviarIPGEOLOC">
                     </div>
                 </form>
@@ -60,7 +60,7 @@
             </div>
             </div>
         </article>
-        <form id="formBack" name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
+        <form id="formBack" class="none" name="logout" action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post">
             <div class="botonSend">
                 <input class="botonEnvio botonRest" type= "submit" value= "Volver" name= "volver"><!-- Si punsamos Cancelar mandaremos el valor de cancelar asignamos el valor login a la variable de session controladorEnCurso y redirecionara al login -->
             </div>

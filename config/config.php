@@ -13,6 +13,8 @@ require_once "core/libreriaValidacion.php"; //importamos el archivo de libreria 
 require_once "model/Usuario.php";
 require_once "model/UsuarioPDO.php";
 require_once "model/DBPDO.php";
+require_once "model/Departamento.php";
+require_once "model/DepartamentoPDO.php";
 require_once "model/REST.php";
 
 
@@ -24,7 +26,13 @@ $controladores = [
     "registro" => "controller/cRegistro.php",
     "editar" => "controller/cEditar.php",
     "rest" => "controller/cRest.php",
-    "borrarCuenta" => "controller/cBorrarCuenta.php"
+    "borrarCuenta" => "controller/cBorrarCuenta.php",
+    "mantenimientoDep" => "controller/cMantenimentoDep.php",
+    "altaDepartamento" => "controller/cAltaDepartamento.php",
+    "borrarDepartamento" => "controller/cBorrarDepartamento.php",
+    "bajaLogicaDepartamento" => "controller/cBajaLogicaDepartamento.php",
+    "editarDepartamento" => "controller/cEditarDepartamento.php",
+    "altaLogicaDepartamento" => "controller/cAltaLogicaDepartamento.php"
 ];
 
 //creamos el objeto vistas y le asignamos las rutas
@@ -36,6 +44,13 @@ $vistas = [
     "registro" => "view/vRegistro.php",
     "editar" => "view/vEditar.php",
     "rest" => "view/vRest.php",
-    "borrarCuenta" => "view/vBorrarCuenta.php"
+    "borrarCuenta" => "view/vBorrarCuenta.php",
+    "mantenimientoDep" => "view/vMantenimentoDep.php",
+    "altaDepartamento" => "view/vAltaDepartamento.php",
+    "borrarDepartamento" => "view/vBorrarDepartamento.php",
+    "bajaLogicaDepartamento" => "view/vBajaLogicaDepartamento.php",
+    "editarDepartamento" => "view/vEditarDepartamento.php",
+    "altaLogicaDepartamento" => "view/vAltaLogicaDepartamento.php"
+    
 ];
 ?>
